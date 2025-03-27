@@ -1,0 +1,30 @@
+services:
+  a:
+    image: nginx:latest
+    depends_on: 
+      - b
+    ports:
+    - 8080
+    - 1234
+  b:
+    image: nginx:latest
+    depends_on:
+    - c
+  c:
+    image: nginx:latest
+    depends_on:
+    - d
+  d:
+    image: nginx:latest
+    depends_on:
+    - e
+  e:
+    image: nginx:latest
+    depends_on:
+    - f
+  f:
+    image: nginx:latest
+    depends_on:
+    - g
+  g:
+    image: nginx:latest
